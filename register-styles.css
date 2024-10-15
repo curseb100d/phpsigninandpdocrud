@@ -6,6 +6,7 @@ body {
     box-sizing: border-box;
 }
 
+/* For Sign Up Container */
 .container {
     padding: 16px; /* size inside */
 }
@@ -46,4 +47,48 @@ a {
 .signin {
     background-color: #f1f1f1;
     text-align: center;
+}
+
+/* For Alert */
+.alert {
+    padding: 20px;
+    color: white;
+}
+
+.alert.success {
+    background-color: #04AA6D;
+}
+
+.alert.danger {
+    background-color: #f44336;
+}
+
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.closebtn:hover {
+    color: black;
+}
+
+/* For Password Validation */
+/* The message box is shown when the user clicks on the password field */
+.message {
+    display: none;
+    background: #f1f1f1;
+    color: #000;
+    position: relative;
+    padding: 20px;
+    margin-top: 10px;
+}
+
+button:disabled {
+    background: #ccc;
 }
