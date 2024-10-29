@@ -1,17 +1,20 @@
 <?php
-// Database credentials
-define('DB_SERVER', 'localhost');
-define('DB_USERNAME', 'root');
-define('DB_PASSWORD', '');
-define('DB_NAME', 'phppdocrud');
 
-// Connect to MySQL database
-try{
-    $pdo = new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
-    
-    // Set to error mode to exception
+// Setting up
+$HOSTNAME = 'localhost';
+$USERNAME = 'root';
+$PASSWORD = '';
+$DATABASE = 'phppdocrud';
+
+try {
+    // Create a PDO connection
+    $pdo = new PDO("mysql:host=$HOSTNAME;dbname=$DATABASE", $USERNAME, $PASSWORD);
+
+    // Set the PDO error mode to exception
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch(PDOException $e){
-    die("ERROR: Cannot connect, sorry. " . $e->getMessage());
+
+    echo "Connected successfully"; // Optional: Can be removed in production
+} catch (PDOException $e) {
+    // If connection fails, an exception will be thrown and caught here
+    die("Connection failed: " . $e->getMessage());
 }
-?>
